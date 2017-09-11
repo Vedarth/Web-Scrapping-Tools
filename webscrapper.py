@@ -11,7 +11,6 @@ soup = BeautifulSoup(html, 'html.parser')
 
 tags = soup('img')
 for i in range(len(tags)):
-    
     try:
         x = tags[i].get('src',None).strip().split('/')[-1].strip()
         urllib.request.urlretrieve(tags[i].get('src',None),x+'.jpg')
